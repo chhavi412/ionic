@@ -24,11 +24,15 @@ public class SendMail {
         this.mailSender = mailSender;
     }
 
-    public void sendMail(String from, String to, String subject, String msg, String authToken) {
+//    public void sendMail(String from, String to, String subject, String msg, String authToken) {
+        public void sendMail(String from, String to, String subject, String msg,String token) {
         MimeMessage message = mailSender.createMimeMessage();
 
         try {
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
+            
+            String url= "http://192.1.200.146:8100/changepassword/"+token;
+            msg= msg+url;
             helper.setFrom(from);
             helper.setTo(to);
             helper.setSubject(subject);

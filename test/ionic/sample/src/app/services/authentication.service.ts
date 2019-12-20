@@ -108,9 +108,13 @@ export class AuthenticationService {
     return this.http.post("http://192.1.200.146:8080/api/check",credentials).map(response => response.json());
   }
 
-  changepassword(credentials){
-    console.log(credentials);
-    return this.http.post("http://192.1.200.146:8080/api/changepassword",credentials).map(response => response.json());
+  changepassword(credentials, token){
+    var Indata={'newPassword':credentials.newPassword, 'token':token.token}
+    console.log(Indata);
+    console.log(token.token);
+    // this.http.post("http://192.1.200.146:8080/api/checktoken",token.token).map(res=>console.log(res))
+    return this.http.post("http://192.1.200.146:8080/api/changepassword",Indata).map(response => console.log(response));
+    
     
   }
 }
