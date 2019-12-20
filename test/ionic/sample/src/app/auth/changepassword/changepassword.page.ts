@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 
 @Component({
@@ -11,15 +11,15 @@ import { ToastController } from '@ionic/angular';
 })
 export class ChangepasswordPage implements OnInit {
 
-  private changePassword: FormGroup;
+  private changePasswordForm: FormGroup;
   token: number;
-  constructor(private authService: AuthenticationService, private router: Router, private toastCtrl: ToastController, private formBuilder: FormBuilder) { }
+  // id: string;
+  constructor(private authService: AuthenticationService, private router: Router, private toastCtrl: ToastController, private formBuilder: FormBuilder, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.changePassword = new FormGroup({
-      email: new FormControl('',[Validators.email]),
-      password: new FormControl('', [Validators.required]),
-      confirm: new FormControl('', [this.equalto('password')])
+    this.changePasswordForm = new FormGroup({
+      newPassword: new FormControl('', [Validators.required]),
+      confirm: new FormControl('', [this.equalto('newPassword')])
     })
   }
   equalto(field_name): ValidatorFn {
@@ -36,11 +36,17 @@ export class ChangepasswordPage implements OnInit {
   }
 
   changepassword(){
-    this.authService.changepassword(this.changePassword.value).subscribe((res)=>{
+    let id = this.route.params.subscribe( params => { this.authService.changepassword(this.changePasswordForm.value, params).subscribe((res)=>{
       console.log(res);
       this.token=1;
+    }) 
+  })
+    // console.log(id);
+    // this.authService.changepassword(this.changePasswordForm.value, id).subscribe((res)=>{
+    //   console.log(res);
+    //   this.token=1;
       
-    })
+    // })
   }
 
 }

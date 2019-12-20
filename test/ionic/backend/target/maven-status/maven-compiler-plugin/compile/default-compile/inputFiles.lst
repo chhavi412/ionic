@@ -1,9 +1,13 @@
-/home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/service/mail/SendMail.java
 /home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/dao/LoginDao.java
-/home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/controller/LoginController.java
 /home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/config/WebConfig.java
-/home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/ionicPojo/Login.java
-/home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/config/IonicAppConfig.java
+/home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/controller/PasswordResetTokenController.java
 /home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/service/LoginService.java
 /home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/config/IonicAppServletInitializer.java
+/home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/ionicPojo/MailTempStorage.java
+/home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/dao/MailTempStorageDao.java
+/home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/service/mail/SendMail.java
+/home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/controller/LoginController.java
+/home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/ionicPojo/Login.java
+/home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/config/IonicAppConfig.java
+/home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/ionicPojo/Test.java
 /home/chhavi/ionic/backend/src/main/java/com/mycompany/sample/ionicSampleApplication.java

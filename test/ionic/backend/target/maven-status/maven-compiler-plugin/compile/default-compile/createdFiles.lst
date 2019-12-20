@@ -1,9 +1,12 @@
 com/mycompany/sample/controller/LoginController.class
-com/mycompany/sample/config/IonicAppServletInitializer.class
 com/mycompany/sample/service/mail/SendMail.class
 com/mycompany/sample/ionicPojo/Login.class
 com/mycompany/sample/config/IonicAppConfig.class
+com/mycompany/sample/ionicPojo/Test.class
+com/mycompany/sample/dao/LoginDao.class
+com/mycompany/sample/config/IonicAppServletInitializer.class
+com/mycompany/sample/ionicPojo/MailTempStorage.class
 com/mycompany/sample/service/LoginService.class
 com/mycompany/sample/ionicSampleApplication.class
 com/mycompany/sample/config/WebConfig.class
-com/mycompany/sample/dao/LoginDao.class
+com/mycompany/sample/dao/MailTempStorageDao.class

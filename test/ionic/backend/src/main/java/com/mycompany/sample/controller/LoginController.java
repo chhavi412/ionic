@@ -8,8 +8,11 @@ package com.mycompany.sample.controller;
 //import com.mycompany.sample.ionicPojo.Login;
 
 import com.mycompany.sample.ionicPojo.Login;
+import com.mycompany.sample.ionicPojo.Test;
 import com.mycompany.sample.service.LoginService;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
@@ -52,8 +55,20 @@ public class LoginController {
         return theService.check(theUser);
     }
     
+//    @RequestMapping(value = "/checktoken", method = RequestMethod.GET)
+//    public String Checktoken(@RequestBody String token){
+//        
+//        return "true";
+//    }
+    
     @RequestMapping(value = "/changepassword", method = RequestMethod.POST)
-    public boolean changepassword(@RequestBody Login theUser){
-        return theService.changepassword(theUser);
+    public String changepassword(@RequestBody Test newPassword){
+        try {
+            return theService.changepassword(newPassword);
+        } catch (Exception ex) {
+            System.out.println(ex);
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 }
